@@ -31,6 +31,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
+        }
 
         stage('TEST'){
             steps {
@@ -43,6 +44,5 @@ pipeline {
                 sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
         }
-    }
     }
 }
