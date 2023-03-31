@@ -1,7 +1,6 @@
 # CONTINUOUS INTEGRATION WITH JENKINS
 
-
-###########
+###################
 ### Services used:
 
 - Git & github
