@@ -24,7 +24,6 @@ pipeline {
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
-        }
 
             post {
                 success {
@@ -32,5 +31,6 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
+        }
     }
 }
