@@ -49,7 +49,7 @@ pipeline {
 
         stage('Sonar Analysis') {
    environment {
-                scannerHome = tool "${SONARSCANNER}" , type: 'hudson.plugins.sonar.SonarRunnerInstallation';
+                scannerHome = tool "${SONARSCANNER}"
             }
           steps {
             withSonarQubeEnv("${SONARSERVER}") {
