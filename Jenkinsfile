@@ -16,8 +16,8 @@ pipeline {
         NEXUSPORT = '8081'
         NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
-        SONARSERVER = 'SonarQube'
-        SONARSCANNA = 'sonar_scanner'
+        SONARSERVER = 'sonarserver'
+        SONARSCANNA = 'sonarscanner'
       
     }
 
@@ -47,13 +47,13 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                scannerHome = tool "${sonar_scanner}" , "hudson.plugins.sonar.SonarRunnerInstallation"
+        stage('Sonar Analysis') {
+   environment {
+                scannerHome = tool "${SONARSCANNER}"
 
             }
           steps {
-            withSonarQubeEnv("${SonarQube}") {
+            withSonarQubeEnv("${SONARSERVER}") {
                 sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
