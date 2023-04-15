@@ -9,8 +9,11 @@ pipeline {
                 echo "${env.FILENAME}"
             }
         }
-        maven "MAVEN3"
-        jdk "OracleJDK8"
+    stage{
+        tool
+            maven "MAVEN3"
+            jdk "OracleJDK8"
+        }    
     }
 
 
