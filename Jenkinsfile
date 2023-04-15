@@ -1,7 +1,15 @@
 pipeline {
     agent any
-    tools {
-        maven "Maven3"
+    stages {
+        stage("foo") {
+            steps {
+                script {
+                    env.FILENAME = readFile 'output.txt'
+                }
+                echo "${env.FILENAME}"
+            }
+        }
+        maven "MAVEN3"
         jdk "OracleJDK8"
     }
 
